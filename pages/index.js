@@ -1,28 +1,137 @@
-import styles from '@/styles/Home.module.css';
-import Link from 'next/link';
+import styles from "@/styles/Home.module.css";
+import Link from "next/link";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
-    {/* 헤더 */}
-    <h1 className={styles.title}>
-      최애의 포토(推しの寫眞)
-    </h1>
-    <Link href="/login">로그인</Link>
-    <Link href="/signup">회원가입</Link>
-    {/* 바디 */}
-    {/* 배너 = 배경 로고 텍스트(구하기 어려웠던\n나의 최애가 여기에!) 버튼1<button>최애 찾으러 가기</button> 이미지 */}
-    <div>구하기 어려웠던<br />나의 최애가 여기에!</div>
-    {/* 카드1 = 배경 텍스트1(포인트로 안전하게 거래하세요) 텍스트2(내 포토카드를 포인트로 팔고, 원하는 포토카드를\n
-    포인트로 안전하게 교환하세요) 이미지*/}
-    <div>내 포토카드를 포인트로 팔고, 원하는 포토카드를<br />포인트로 안전하게 교환하세요</div>
-    {/* 카드2 = 배경 텍스트1(알림으로 보다 빨라진 거래) 텍스트2(교환 제안부터 판매 완료까지,
-실시간 알림으로 놓치지 마세요.) 이미지*/}
-    <div>교환 제안부터 판매 완료까지,<br />실시간 알림으로 놓치지 마세요.</div>
-    {/* 카드3 = 배경 텍스트1(랜덤 상자로 포인트 받자! 🎉) 텍스트2(한 시간마다 주어지는 랜덤 상자를 열고,<br>
-    포인트를 획득하세요) 이미지*/}
-    <div>한 시간마다 주어지는 랜덤 상자를 열고,<br />포인트를 획득하세요</div>
-    {/* 푸터 = 이미지 텍스트(나의 최애를 지금 찾아보세요!) 버튼1<button>최애 찾으러 가기</button>*/}
-</>
-);
+      {/* 헤더부분은 아래 h1, Link 태그로 대체. 여기는 직접 만들거니 손대지마. */}
+      <h1 className={styles.title}>최애의 포토(推しの寫眞)</h1>
+      <Link href="/login">로그인</Link>
+      <Link href="/signup">회원가입</Link>
+
+      {/* 바디 */}
+      <main className={styles.main}>
+        {/* 히어로 */}
+        <section className={styles.heroSection}>
+          <div className={styles.heroInner}>
+            <div className={styles.heroTop}>
+              <div className={styles.heroMiniLogo}>최애의포토</div>
+
+              {/* (기존 텍스트 유지) */}
+              <h2 className={styles.heroTitle}>
+                구하기 어려웠던
+                <br />
+                <span className={styles.hlYellow}>나의 최애</span>가 여기에!
+              </h2>
+
+              <Link className={styles.ctaYellow} href="/market">
+                최애 찾으러 가기
+              </Link>
+            </div>
+
+            {/* 중앙 목업/이미지 자리 */}
+            <div className={styles.heroStage}>
+              <div className={styles.heroDevice}>DEVICE IMG</div>
+
+              {/* 좌우 이미지 자리(겹쳐지는 카드 느낌) */}
+              <div className={`${styles.heroSideImg} ${styles.left1}`}>IMG</div>
+              <div className={`${styles.heroSideImg} ${styles.left2}`}>IMG</div>
+              <div className={`${styles.heroSideImg} ${styles.right1}`}>IMG</div>
+              <div className={`${styles.heroSideImg} ${styles.right2}`}>IMG</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 카드1 */}
+        <section className={`${styles.featureSection} ${styles.featureGreen}`}>
+          <div className={styles.featureInner}>
+            <div className={styles.featureText}>
+              <h3 className={styles.featureTitle}>
+                포인트로 <span className={styles.hlYellow}>안전하게</span> 거래하세요
+              </h3>
+
+              {/* (기존 텍스트 유지) */}
+              <p className={styles.featureDesc}>
+                내 포토카드를 포인트로 팔고, 원하는 포토카드를
+                <br />
+                포인트로 안전하게 교환하세요
+              </p>
+            </div>
+
+            <div className={styles.featureVisual}>
+              {/* 포인트 pill 자리 */}
+              <div className={styles.pointPill}>
+                <span className={styles.pointMain}>1,540 P</span>
+                <span className={styles.pointSub}>유디</span>
+                <span className={styles.pointPlus}>+40 P</span>
+              </div>
+
+              {/* 우측 이미지/목업 자리 */}
+              <div className={styles.mockDevice}>DEVICE IMG</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 카드2 */}
+        <section className={`${styles.featureSection} ${styles.featureBlue}`}>
+          <div className={styles.featureInner}>
+            <div className={styles.featureText}>
+              <h3 className={styles.featureTitle}>
+                알림으로 보다 <span className={styles.hlBlue}>빨라진 거래</span>
+              </h3>
+
+              {/* (기존 텍스트 유지) */}
+              <p className={styles.featureDesc}>
+                교환 제안부터 판매 완료까지,
+                <br />
+                실시간 알림으로 놓치지 마세요.
+              </p>
+            </div>
+
+            <div className={styles.featureVisual}>
+              {/* 말풍선 자리 */}
+              <div className={styles.chatBubble}>채팅/알림</div>
+
+              {/* 우측 이미지/목업 자리 */}
+              <div className={styles.mockPanel}>NOTI PANEL</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 카드3 */}
+        <section className={`${styles.featureSection} ${styles.featureYellow}`}>
+          <div className={styles.featureInner}>
+            <div className={styles.featureText}>
+              <h3 className={styles.featureTitle}>
+                랜덤 상자로 <span className={styles.hlYellow}>포인트 받자!</span> 🎉
+              </h3>
+
+              {/* (기존 텍스트 유지) */}
+              <p className={styles.featureDesc}>
+                한 시간마다 주어지는 랜덤 상자를 열고,
+                <br />
+                포인트를 획득하세요
+              </p>
+            </div>
+
+            <div className={styles.featureVisual}>
+              {/* 모달/기프트 자리 */}
+              <div className={styles.giftModal}>RANDOM BOX MODAL</div>
+              <div className={styles.giftDeco}>🎁</div>
+            </div>
+          </div>
+        </section>
+
+        {/* 푸터 */}
+        <footer className={styles.footer}>
+          <div className={styles.footerCard}>PHOTO CARD</div>
+          <p className={styles.footerText}>나의 최애를 지금 찾아보세요!</p>
+          <Link className={styles.ctaYellow} href="/market">
+            최애 찾으러 가기
+          </Link>
+        </footer>
+      </main>
+    </>
+  );
 }

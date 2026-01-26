@@ -1,15 +1,15 @@
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      {/* 헤더부분은 아래 h1, Link 태그로 대체. 여기는 직접 만들거니 손대지마. */}
-      <h1 className={styles.title}>최애의 포토(推しの寫眞)</h1>
-      <Link href="/login">로그인</Link>
-      <Link href="/signup">회원가입</Link>
-
+      {/* 내비게이션 바 */}
+      <nav><Image className={styles.title} src="/logo.png" alt="로고" width={120} height={25.2} />
+        <Link href="/login">로그인</Link>
+        <Link href="/signup">회원가입</Link>
+      </nav>
       {/* 바디 */}
       <main className={styles.main}>
         {/* 히어로 */}
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
 
               {/* 우측 이미지/목업 자리 */}
-              <div className={styles.mockDevice}>DEVICE IMG</div>
+              <div className={styles.mockDevice}>IMG</div>
             </div>
           </div>
         </section>

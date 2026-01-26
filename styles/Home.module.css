@@ -1,3 +1,351 @@
+/* 전체 배경 */
+.main {
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #eaeaea;
+  padding-bottom: 120px;
+}
+
+/* ===== 헤더(건드리지 않고 CSS로만 배치) ===== */
 .title {
-  font-size: 120px;
+  position: fixed;
+  top: 18px;
+  left: 28px;
+  z-index: 50;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #fff;
+}
+
+/* 헤더 링크 2개만 정확히 잡기 */
+:global(#__next > a[href="/login"]),
+:global(#__next > a[href="/signup"]) {
+  position: fixed;
+  top: 20px;
+  z-index: 50;
+  font-size: 12px;
+  color: #cfcfcf;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+:global(#__next > a[href="/login"]) {
+  right: 92px;
+}
+:global(#__next > a[href="/signup"]) {
+  right: 28px;
+}
+:global(#__next > a[href="/login"]:hover),
+:global(#__next > a[href="/signup"]:hover) {
+  opacity: 1;
+}
+
+/* ===== 공통 ===== */
+.ctaYellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 22px;
+  border-radius: 6px;
+  background: #d9ff00;
+  color: #0b0b0b;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(217, 255, 0, 0.12);
+}
+
+.hlYellow {
+  color: #d9ff00;
+}
+
+.hlBlue {
+  color: #39b6ff;
+}
+
+.featureTitle {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.featureDesc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.featureInner,
+.heroInner {
+  width: min(1100px, calc(100% - 56px));
+  margin: 0 auto;
+}
+
+/* ===== HERO ===== */
+.heroSection {
+  padding-top: 80px; /* fixed header 아래 여백 */
+  padding-bottom: 70px;
+}
+
+.heroInner {
+  border-radius: 22px;
+  padding: 64px 48px 54px;
+  background: linear-gradient(90deg, #404040 0%, #6d3b66 100%);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.heroTop {
+  text-align: center;
+}
+
+.heroMiniLogo {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  opacity: 0.95;
+  margin-bottom: 10px;
+}
+
+.heroTitle {
+  margin: 0 0 18px;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+  color: #fff;
+}
+
+.heroStage {
+  margin-top: 44px;
+  position: relative;
+  height: 320px;
+}
+
+.heroDevice {
+  width: min(760px, 86%);
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+}
+
+.heroSideImg {
+  position: absolute;
+  top: 92px;
+  width: 120px;
+  height: 180px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 700;
+}
+
+.left1 {
+  left: -18px;
+  transform: rotate(-3deg);
+}
+.left2 {
+  left: 120px;
+  transform: rotate(2deg);
+}
+.right1 {
+  right: 120px;
+  transform: rotate(-2deg);
+}
+.right2 {
+  right: -18px;
+  transform: rotate(3deg);
+}
+
+/* ===== FEATURE SECTION 공통 ===== */
+.featureSection {
+  padding: 90px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureInner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.featureText {
+  padding-left: 6px;
+}
+
+.featureVisual {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 뒤쪽 반원(아크) */
+.featureSection::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -240px;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 520px;
+  border-radius: 999px;
+  opacity: 0.35;
+  filter: blur(0px);
+}
+
+/* 색상별 아크 */
+.featureGreen::before {
+  background: radial-gradient(circle at 50% 40%, rgba(217, 255, 0, 0.9), rgba(217, 255, 0, 0) 60%);
+}
+.featureBlue::before {
+  background: radial-gradient(circle at 50% 40%, rgba(57, 182, 255, 0.9), rgba(57, 182, 255, 0) 60%);
+}
+.featureYellow::before {
+  background: radial-gradient(circle at 50% 40%, rgba(170, 255, 0, 0.9), rgba(170, 255, 0, 0) 60%);
+}
+
+/* 카드1 전용(포인트 pill + 목업) */
+.pointPill {
+  position: absolute;
+  left: -36px;
+  top: 70px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+}
+
+.pointMain {
+  font-weight: 900;
+  color: #fff;
+}
+.pointSub {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.pointPlus {
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #d9ff00;
+}
+
+.mockDevice {
+  width: min(520px, 100%);
+  height: 250px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 800;
+}
+
+/* 카드2 전용(말풍선 + 패널) */
+.chatBubble {
+  position: absolute;
+  left: 0;
+  top: 36px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: rgba(57, 182, 255, 0.16);
+  border: 1px solid rgba(57, 182, 255, 0.25);
+  color: rgba(220, 245, 255, 0.9);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.mockPanel {
+  width: min(520px, 100%);
+  height: 250px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 800;
+}
+
+/* 카드3 전용(모달 느낌) */
+.giftModal {
+  width: min(560px, 100%);
+  height: 260px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(217, 255, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 900;
+  position: relative;
+}
+
+.giftDeco {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  font-size: 26px;
+  opacity: 0.7;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 90px;
+  padding: 90px 0 20px;
+  text-align: center;
+}
+
+.footerCard {
+  width: 70px;
+  height: 90px;
+  border-radius: 10px;
+  background: rgba(217, 255, 0, 0.14);
+  border: 1px solid rgba(217, 255, 0, 0.28);
+  margin: 0 auto 18px;
+  transform: rotate(-18deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.footerText {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 800;
 }

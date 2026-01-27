@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <>
       {/* 내비게이션 바 */}
-      <nav className={styles.title}>
-        <Image src="/logo.png" alt="로고" width={120} height={25.2} />
+      <nav className={styles.navBar}>
+        <Link href="/">
+          <Image src="/logo.png" alt="로고" width={140} height={25} />
+        </Link>
         <div className={styles.linkGroup}>
           <Link href="/login">로그인</Link>
           <Link href="/signup">회원가입</Link>
@@ -19,7 +21,7 @@ export default function Home() {
         <section className={styles.heroSection}>
           <div className={styles.heroInner}>
             <div className={styles.heroTop}>
-              <div className={styles.heroMiniLogo}>최애의포토</div>
+              <Image className={styles.heroMiniLogo} src="/logo.png" alt="로고" width={140} height={25} />
 
               {/* (기존 텍스트 유지) */}
               <h2 className={styles.heroTitle}>

@@ -6,9 +6,12 @@ export default function Home() {
   return (
     <>
       {/* 내비게이션 바 */}
-      <nav><Image className={styles.title} src="/logo.png" alt="로고" width={120} height={25.2} />
-        <Link href="/login">로그인</Link>
-        <Link href="/signup">회원가입</Link>
+      <nav className={styles.title}>
+        <Image src="/logo.png" alt="로고" width={120} height={25.2} />
+        <div className={styles.linkGroup}>
+          <Link href="/login">로그인</Link>
+          <Link href="/signup">회원가입</Link>
+        </div>
       </nav>
       {/* 바디 */}
       <main className={styles.main}>

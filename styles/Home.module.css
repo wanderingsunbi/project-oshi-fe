@@ -9,37 +9,15 @@
 /* ===== 헤더(건드리지 않고 CSS로만 배치) ===== */
 .title {
   position: fixed;
-  top: 18px;
-  left: 28px;
+  top: 0px;
+  left: 0px;
   z-index: 50;
   margin: 0;
-  font-size: 16px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  color: #fff;
-}
-
-/* 헤더 링크 2개만 정확히 잡기 */
-:global(#__next > a[href="/login"]),
-:global(#__next > a[href="/signup"]) {
-  position: fixed;
-  top: 20px;
-  z-index: 50;
-  font-size: 12px;
-  color: #cfcfcf;
-  text-decoration: none;
-  opacity: 0.9;
-}
-
-:global(#__next > a[href="/login"]) {
-  right: 92px;
-}
-:global(#__next > a[href="/signup"]) {
-  right: 28px;
-}
-:global(#__next > a[href="/login"]:hover),
-:global(#__next > a[href="/signup"]:hover) {
-  opacity: 1;
+  padding: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* ===== 공통 ===== */

@@ -65,15 +65,10 @@ export default function Home() {
             </div>
 
             <div className={styles.featureVisual}>
-              {/* 포인트 pill 자리 */}
-              <div className={styles.pointPill}>
-                <span className={styles.pointMain}>1,540 P</span>
-                <span className={styles.pointSub}>유디</span>
-                <span className={styles.pointPlus}>+40 P</span>
-              </div>
-
               {/* 우측 이미지/목업 자리 */}
-              <div className={styles.mockDevice}>IMG</div>
+              <div className={styles.mockDevice}>
+                <Image src="/img2.png" alt="featureImg1" width={1068} height={518}/>
+              </div>
             </div>
           </div>
         </section>

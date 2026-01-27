@@ -1,7 +1,7 @@
 /* 전체 배경 */
 .main {
   min-height: 100vh;
-  background: #0b0b0b;
+  background: #0f0f0f;
   color: #eaeaea;
   padding-bottom: 120px;
 }
@@ -61,23 +61,23 @@
 
 .featureTitle {
   margin: 0 0 10px;
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .featureDesc {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.68);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  color: #9f9f9f;
 }
 
 .featureInner,
 .heroInner {
   width: min(1100px, calc(100% - 56px));
-  margin: 0 auto;
+  margin: 0 auto;  
 }
 
 /* ===== HERO ===== */
@@ -89,7 +89,7 @@
   border-radius: 22px;
   width: auto;
   padding: 77px 0;
-  background: linear-gradient(90deg, #404040 0%, #6d3b66 100%);
+  background: linear-gradient(60deg, #435A6B 0%, #6d3b66 100%);
   position: relative;
   overflow: hidden;
 }
@@ -163,16 +163,18 @@
 
 /* ===== FEATURE SECTION 공통 ===== */
 .featureSection {
+  width: 100%;
+  height: 800px;
   padding: 90px 0 70px;
   position: relative;
   overflow: hidden;
 }
 
 .featureInner {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 44px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  place-items: start;
 }
 
 .featureText {
@@ -191,19 +193,19 @@
 .featureSection::before {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: -240px;
+  left: 500px;
+  bottom: -1000px;
   transform: translateX(-50%);
-  width: 1200px;
-  height: 520px;
-  border-radius: 999px;
-  opacity: 0.35;
+  width: 1480px;
+  height: 1480px;
+  border-radius: 1480px;
+  opacity: 0.2;
   filter: blur(0px);
 }
 
 /* 색상별 아크 */
 .featureGreen::before {
-  background: radial-gradient(circle at 50% 40%, rgba(217, 255, 0, 0.9), rgba(217, 255, 0, 0) 60%);
+  background: radial-gradient(circle at 50% 40%, rgba(217, 255, 0, 0.9), rgba(217, 255, 0, 0)  90%);
 }
 .featureBlue::before {
   background: radial-gradient(circle at 50% 40%, rgba(57, 182, 255, 0.9), rgba(57, 182, 255, 0) 60%);
@@ -212,49 +214,18 @@
   background: radial-gradient(circle at 50% 40%, rgba(170, 255, 0, 0.9), rgba(170, 255, 0, 0) 60%);
 }
 
-/* 카드1 전용(포인트 pill + 목업) */
-.pointPill {
-  position: absolute;
-  left: -36px;
-  top: 70px;
-  height: 44px;
-  padding: 0 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  backdrop-filter: blur(8px);
-}
-
-.pointMain {
-  font-weight: 900;
-  color: #fff;
-}
-.pointSub {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-}
-.pointPlus {
-  margin-left: 6px;
-  font-size: 12px;
-  font-weight: 900;
-  color: #d9ff00;
-}
-
+/* 카드1 */
 .mockDevice {
-  width: min(520px, 100%);
-  height: 250px;
-  border-radius: 14px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 800;
+  width: 1068px;
+  height: 200px;
+  
 }
+
+.mockDevice img {
+  width: 100%;
+  height: auto;
+}
+
 
 /* 카드2 전용(말풍선 + 패널) */
 .chatBubble {

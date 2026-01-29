@@ -67,7 +67,7 @@ export default function Home() {
             <div className={styles.featureVisual}>
               {/* 우측 이미지/목업 자리 */}
               <div className={styles.mockDevice}>
-                <Image src="/img2.png" alt="featureImg1" width={1068} height={518}/>
+                <Image src="/img1lg.png" alt="featureImg1" width={1068} height={518}/>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
               <div className={styles.chatBubble}>채팅/알림</div>
 
               {/* 우측 이미지/목업 자리 */}
-              <div className={styles.mockPanel}>NOTI PANEL</div>
+              <Image className={styles.mockPanel} src="/img2lg.png" alt="이미지" width={1068} height={518} />
             </div>
           </div>
         </section>
@@ -117,8 +117,7 @@ export default function Home() {
 
             <div className={styles.featureVisual}>
               {/* 모달/기프트 자리 */}
-              <div className={styles.giftModal}>RANDOM BOX MODAL</div>
-              <div className={styles.giftDeco}>🎁</div>
+              <Image className={styles.giftModal} src="/img3.png" alt="이미지" width={1778} height={1143} />
             </div>
           </div>
         </section>

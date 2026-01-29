@@ -37,13 +37,13 @@ export default function Home() {
 
             {/* 중앙 목업/이미지 자리 */}
             <div className={styles.heroStage}>
-              <div className={styles.heroDevice}>DEVICE IMG</div>
+              <Image className={styles.heroDevice} src="/mockup.png" alt="mockup" width={2500} height={1530} />
 
               {/* 좌우 이미지 자리(겹쳐지는 카드 느낌) */}
-              <div className={`${styles.heroSideImg} ${styles.left1}`}>IMG</div>
-              <div className={`${styles.heroSideImg} ${styles.left2}`}>IMG</div>
-              <div className={`${styles.heroSideImg} ${styles.right1}`}>IMG</div>
-              <div className={`${styles.heroSideImg} ${styles.right2}`}>IMG</div>
+              <Image className={`${styles.heroSideImg} ${styles.left1}`} src="/side1.png" alt="side" width={207} height={393} />
+              <Image className={`${styles.heroSideImg} ${styles.left2}`} src="/side2.png" alt="side" width={207} height={393} />
+              <Image className={`${styles.heroSideImg} ${styles.right1}`} src="/side3.png" alt="side" width={207} height={393} />
+              <Image className={`${styles.heroSideImg} ${styles.right2}`} src="/side4.png" alt="side" width={207} height={393} />
             </div>
           </div>
         </section>
@@ -125,7 +125,7 @@ export default function Home() {
 
         {/* 푸터 */}
         <footer className={styles.footer}>
-          <div className={styles.footerCard}>PHOTO CARD</div>
+          <Image className={styles.footerCard} src="/side3.png" alt="footer image" width={207} height={393} />
           <p className={styles.footerText}>나의 최애를 지금 찾아보세요!</p>
           <Link className={styles.ctaYellow} href="/market">
             최애 찾으러 가기

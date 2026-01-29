@@ -83,15 +83,18 @@
 /* ===== HERO ===== */
 .heroSection {
   padding: 80px 60px 4px;
+  width: auto;
+  height: 1080px;
 }
 
 .heroInner {
   border-radius: 22px;
   width: auto;
+  height: 1080px;
   padding: 77px 0;
   background: linear-gradient(60deg, #435A6B 0%, #6d3b66 100%);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .heroTop {
@@ -112,53 +115,44 @@
 .heroStage {
   margin-top: 44px;
   position: relative;
-  height: 320px;
 }
 
 .heroDevice {
-  width: min(760px, 86%);
-  height: 320px;
+  width: 1250px;
+  height: 765px;
   margin: 0 auto;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 700;
+  position: relative;
+  z-index: 2;
 }
 
 .heroSideImg {
   position: absolute;
-  top: 92px;
-  width: 120px;
-  height: 180px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 270px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.45);
-  font-weight: 700;
 }
 
 .left1 {
-  left: -18px;
-  transform: rotate(-3deg);
+  left: -10%;
 }
+
 .left2 {
-  left: 120px;
-  transform: rotate(2deg);
+  left: 10%;
 }
+
 .right1 {
-  right: 120px;
-  transform: rotate(-2deg);
+  right: 10%;
 }
+
 .right2 {
-  right: -18px;
-  transform: rotate(3deg);
+  right: -10%;
 }
 
 /* ===== FEATURE SECTION 공통 ===== */

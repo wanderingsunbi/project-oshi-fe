@@ -1,14 +1,37 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
+import api from "@/lib/api";
 
-export default function LoginPage () {
+export default function LoginPage() {
+  const router = useRouter();
   const [showPw, setShowPw] = useState(false);
-  const onSubmit = (e) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    //로그인처리
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (!email || !password) {
+      alert("이메일과 비밀번호를 입력해주세요.");
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      await api.post("/auth/login", { email, password });
+      router.push("/");
+    } catch (err) {
+      const message =
+        err.response?.data?.message || "이메일 또는 비밀번호를 확인해주세요.";
+      alert(message);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
 
@@ -28,10 +51,12 @@ export default function LoginPage () {
         </label>
         <input
           id="email"
+          name="email"
           className={styles.input}
           type="email"
           placeholder="이메일을 입력해 주세요"
           autoComplete="email"
+          disabled={isLoading}
         />
 
         <label className={styles.label} htmlFor="password">
@@ -40,10 +65,12 @@ export default function LoginPage () {
         <div className={styles.pwWrap}>
           <input
             id="password"
+            name="password"
             className={styles.input}
             type={showPw ? "text" : "password"}
             placeholder="비밀번호를 입력해 주세요"
             autoComplete="current-password"
+            disabled={isLoading}
           />
           <button
             type="button"
@@ -53,16 +80,16 @@ export default function LoginPage () {
             title={showPw ? "비밀번호 숨기기" : "비밀번호 보기"}
           >
             <img
-              src={showPw ? "/invisible.svg" : "visible.svg"}
-              alt=""
+              src={showPw ? "/invisible.svg" : "/visible.svg"}
+              alt="비밀번호 표시 토글"
               width={20}
               height={20}
             />
           </button>
         </div>
 
-          <button className={styles.loginBtn} type="submit">
-            로그인
+          <button className={styles.loginBtn} type="submit" disabled={isLoading}>
+            {isLoading ? "로그인 중..." : "로그인"}
           </button>
         </form>
 

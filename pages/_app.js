@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }) {
         <title>최애의 포토</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }

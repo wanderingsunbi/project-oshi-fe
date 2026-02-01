@@ -124,7 +124,9 @@ export default function Home() {
 
         {/* 푸터 */}
         <footer className={styles.footer}>
-          <Image className={styles.footerCard} src="/side3.png" alt="이미지4" width={207} height={393} />
+          <div className={styles.footerCardWrap}>
+            <Image className={styles.footerCard} src="/side3.png" alt="이미지4" width={207} height={393} />
+          </div>
           <p className={styles.footerText}>나의 최애를 지금 찾아보세요!</p>
           <Link className={styles.ctaYellow} href="/market">
             최애 찾으러 가기

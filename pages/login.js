@@ -42,7 +42,7 @@ export default function LoginPage() {
     </Head>
     <div className={styles.bg}>
     <div className={styles.card}>
-      <Link href="/">
+      <Link href="/" className={styles.logoLink}>
         <Image src="/logo.png" alt="최애의 포토 로고" width={200} height={40} />
       </Link>
       <form className={styles.form} onSubmit={onSubmit}>

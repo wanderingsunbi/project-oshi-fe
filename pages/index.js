@@ -67,7 +67,7 @@ export default function Home() {
             <div className={styles.featureVisual}>
               {/* 우측 이미지/목업 자리 */}
               <div className={styles.mockDevice}>
-                <Image src="/img1lg.png" alt="featureImg1" width={1068} height={518}/>
+                <Image src="/img1lg.png" alt="이미지1" width={1068} height={518}/>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
               <div className={styles.chatBubble}>채팅/알림</div>
 
               {/* 우측 이미지/목업 자리 */}
-              <Image className={styles.mockPanel} src="/img2lg.png" alt="이미지" width={1068} height={518} />
+              <Image className={styles.mockPanel} src="/img2lg.png" alt="이미지2" width={1068} height={518} />
             </div>
           </div>
         </section>
@@ -117,14 +117,14 @@ export default function Home() {
 
             <div className={styles.featureVisual}>
               {/* 모달/기프트 자리 */}
-              <Image className={styles.giftModal} src="/img3.png" alt="이미지" width={1778} height={1143} />
+              <Image className={styles.giftModal} src="/img3.png" alt="이미지3" width={1778} height={1143} />
             </div>
           </div>
         </section>
 
         {/* 푸터 */}
         <footer className={styles.footer}>
-          <Image className={styles.footerCard} src="/side3.png" alt="footer image" width={207} height={393} />
+          <Image className={styles.footerCard} src="/side3.png" alt="이미지4" width={207} height={393} />
           <p className={styles.footerText}>나의 최애를 지금 찾아보세요!</p>
           <Link className={styles.ctaYellow} href="/market">
             최애 찾으러 가기

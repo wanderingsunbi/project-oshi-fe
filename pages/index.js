@@ -1,20 +1,12 @@
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import Nav from "@/components/Nav";
 
 export default function Home() {
   return (
     <>
-      {/* 내비게이션 바 */}
-      <nav className={styles.navBar}>
-        <Link href="/">
-          <Image src="/logo.png" alt="로고" width={140} height={25} />
-        </Link>
-        <div className={styles.linkGroup}>
-          <Link href="/login">로그인</Link>
-          <Link href="/signup">회원가입</Link>
-        </div>
-      </nav>
+      <Nav />
       {/* 바디 */}
       <main className={styles.main}>
         {/* 히어로 */}
